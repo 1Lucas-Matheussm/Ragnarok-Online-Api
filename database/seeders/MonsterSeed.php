@@ -38,10 +38,9 @@ class MonsterSeed extends Seeder
             $monsterImgValidate = File::exists(public_path($monsterPath));
             $mapImgValidate     = File::exists(public_path($mapPath));
 
-            // 4. Salva ou atualiza no banco de dados
             Monster::updateOrCreate(
                 [
-                    'id' => $monster['id'],
+                    'monster_id' => $monster['id'],
                     'name' => $monster['name'],
 
                     'map' => $monster['map'],

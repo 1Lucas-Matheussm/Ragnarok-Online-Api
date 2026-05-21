@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('monsters', function (Blueprint $table) {
-            $table->unsignedBigInteger('id');
+            $table->id();
+            $table->integer('monster_id');
             $table->string('name');
             $table->string('sprite');
             $table->string('map');
@@ -21,8 +22,6 @@ return new class extends Migration
             $table->integer('respawn_max_time');
 
             $table->timestamps();
-
-            $table->primary(['id', 'name']);
         });
     }
 
